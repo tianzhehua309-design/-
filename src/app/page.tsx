@@ -2,6 +2,8 @@ import { prisma } from '@/lib/prisma'
 import { ProductCard } from '@/components/ProductCard'
 import { CartDrawer } from '@/components/CartDrawer'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Home() {
   // 1. Fetch categories with their products (only those with at least one available product)
   const categories = await (prisma.category as any).findMany({
